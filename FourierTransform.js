@@ -5015,8 +5015,8 @@ function discreteFourier(koordinat_masukan){
     
     //let koordinat_x = 0; 
     //let koordinat_y = 0;
-    let fungsi = [];
-    let panjang_fungsi = koordinat_masukan.length;
+    const fungsi = [];
+    const panjang_fungsi = koordinat_masukan.length;
     for(let i = 0; i< panjang_fungsi; i++){
         let imajiner = 0;
         let real = 0;
@@ -5031,7 +5031,7 @@ function discreteFourier(koordinat_masukan){
 
         let frekuensi = i;
         let fase = atan2(imajiner, real);
-        let amplitudo = sqrt(real*real*imajiner*imajiner);
+        let amplitudo = sqrt(real*real + imajiner*imajiner);
         fungsi[i] = {imajiner, real, amplitudo, fase, frekuensi}
     }
     return fungsi;
@@ -5094,6 +5094,3 @@ function draw(){
    time += dt;
   
 }
-
-
-
